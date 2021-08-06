@@ -82,20 +82,21 @@ WSGI_APPLICATION = 'BOOKUET.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'bookstores',
-#         'USER': 'postgres',
-#         'PASSWORD': '0047',
-#         'HOST': 'localhost',
-        
-        
-#     }
-# }
 DATABASES = {
-    'default':dj_database_url.config()
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'da287m14ikgek1',
+        'USER': 'hyivgdtvrthqsq',
+        'PASSWORD': '3e87e5a1c569c56ac01dbf7a304efda7934da6e36d00b812f48c70465d9cb872',
+        'HOST': 'ec2-34-197-105-186.compute-1.amazonaws.com',
+        'PORT' : 5432,
+        
+       
+    }
 }
+# DATABASES = {
+#     'default':dj_database_url.config()
+# }
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
