@@ -87,8 +87,7 @@ DATABASES = {
         'NAME': 'bookstores',
         'USER': 'postgres',
         'PASSWORD': '0047',
-        'HOST': 'localhost',
-        'PORT' : '5433'
+        
         
     }
 }
