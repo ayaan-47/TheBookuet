@@ -27,7 +27,7 @@
         <div class="lists-check">
           <ul>
            {% for question in questions  %}
-            <a href="{%url 'genre' question.id%}"><li>{{question.name}} --------------- {{question.total_books}} </li></a>
+            <a href="{%url 'genre' question.id%}"><li>{{question.name}} --------------- {{question.total_books}} ID -------------> {{question.id}}</li></a>
                      {%for b in question.books.all %}
                           <div class="lists-check">
                           <ul class = 'list-plus'>
