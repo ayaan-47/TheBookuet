@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-
+import django_heroku
+import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -81,17 +82,20 @@ WSGI_APPLICATION = 'BOOKUET.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'bookstores',
+#         'USER': 'postgres',
+#         'PASSWORD': '0047',
+#         'HOST': 'localhost',
+        
+        
+#     }
+# }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'bookstores',
-        'USER': 'postgres',
-        'PASSWORD': '0047',
-        
-        
-    }
+    'default':dj_database_url.config()
 }
-
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
@@ -135,3 +139,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/' 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+django_heroku.settings(locals())
