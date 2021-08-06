@@ -1,0 +1,85 @@
+{%extends 'base.html'%}
+{%block content%}
+{%load static%}
+<!doctype html>
+
+
+<html class="no-js" lang="en">
+
+
+<body>
+
+
+<div role="main" id="main">
+  <div class="wrapper">
+    <!-- page-content -->
+    <div class="page-content">
+      <!-- entry-content -->
+      <div class="entry-content cf">
+      <h2 class="heading">Upload Your Book Here</h2>
+      <form method="POST" enctype="multipart/form-data" id="contactForm">
+        {%csrf_token%}
+<p><label for="id_book_name">Book name:</label> <br><input type="text" name="book_name" value="Enter Book Name" maxlength="100" required="" id="id_book_name"></p>
+<p><label for="id_author_name">Author name:</label> <br><input type="text" name="author_name" value="Enter Author Name" maxlength="100" required="" id="id_author_name"></p>
+<p><label for="id_thumbnail">Thumbnail:</label> <br><input type="file" name="thumbnail" accept="image/*" id="id_thumbnail"></p>
+<p><label for="id_book_pdf">Book pdf:</label> <br><input type="file" name="book_pdf" id="id_book_pdf"></p>
+<p><label for="id_synopsis">Synopsis:</label> <br><textarea name="synopsis" cols="40" rows="10" required="" id="id_synopsis">Enter Synopsis</textarea></p>
+<p><label for="id_review">Review:</label> <br><textarea name="review" cols="40" rows="10" required="" id="id_review">Enter Review</textarea></p>
+<p><label for="id_thumbnail_2">Thumbnail 2:</label> <br><input type="file" name="thumbnail_2" accept="image/*" id="id_thumbnail_2"></p>
+<p><label for="id_book_genre">Book genre:</label> <br><select name="book_genre" id="id_book_genre">
+  <option value="3">Romance</option>
+
+  <option value="4">Thriller</option>
+
+  <option value="5">Crime</option>
+
+  <option value="6">Comedy</option>
+
+  <option value="7">Religious</option>
+
+  <option value="8">Horror</option>
+
+  <option value="9">Drama</option>
+
+</select></p>
+<p><label for="id_category">Category:</label> <br><select name="category" id="id_category">
+  <option value="fe">featured</option>
+
+  <option value="n" selected="">normal</option>
+
+</select></p>
+        <input class="link-button green" type="submit" value="Update">
+        
+
+        
+        
+    </form>
+       
+      <!-- ENDS entry-content -->
+      <div class="c-1"></div>
+      <div class="c-2"></div>
+      <div class="c-3"></div>
+      <div class="c-4"></div>
+    </div>
+    <!-- ENDS page-content -->
+  </div>
+</div>
+
+<!-- JavaScript at the bottom for fast page loading -->
+<script src="js/jquery-1.7.1.min.js"></script>
+<!-- scripts concatenated and minified via build script -->
+<script src="js/custom.js"></script>
+<!-- superfish -->
+<script src="js/superfish-1.4.8/js/hoverIntent.js"></script>
+<script src="js/superfish-1.4.8/js/superfish.js"></script>
+<script src="js/superfish-1.4.8/js/supersubs.js"></script>
+<!-- ENDS superfish -->
+<script src="js/jquery.isotope.min.js"></script>
+<script src="js/jquery.nivo.slider.js"></script>
+<script src="js/css3-mediaqueries.js"></script>
+<script src="js/tabs.js"></script>
+<script src="js/poshytip-1.1/src/jquery.poshytip.min.js"></script>
+<!-- end scripts -->
+</body>
+</html>
+{% endblock %}

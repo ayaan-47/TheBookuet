@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<body>
+<!-- HEADER -->
+
+
+<!-- ENDS HEADER -->
+<!-- MAIN -->
+<div role="main" id="main">
+  <div class="wrapper">
+    <!-- page-content -->
+    <div class="page-content">
+      <!-- entry-content -->
+      <div class="entry-content cf">
+
+        <!-- Lists -->
+        <h4 class="heading">Total Categories and Total Books in them</h4>
+        <div class="lists-check">
+          <ul>
+           {% for question in questions  %}
+            <a href="{%url 'genre' question.id%}"><li>{{question.name}} --------------- {{question.total_books}} </li></a>
+                     {%for b in question.books.all %}
+                          <div class="lists-check">
+                          <ul class = 'list-plus'>
+                          <li class = 'list-plus'>{{b.book_name}}</li>
+                          </ul> 
+                          </div>
+                        {% comment %} {{b.book_name}} {% endcomment %}
+                      {% endfor %}
+          {% endfor %}
+          </ul>
+        </div>
+        <div class="lists-arrow">
+          <ul>
+         
+          </ul>
+        </div>
+        {% comment %} <div class="lists-plus">
+          <ul>
+            <li>Lorem ipsum dolor amet</li>
+            <li>Lorem ipsum dolor amet</li>
+            <li>Lorem ipsum dolor amet</li>
+          </ul>
+        </div>
+        <div class="lists-star">
+          <ul>
+            <li>Lorem ipsum dolor amet</li>
+            <li>Lorem ipsum dolor amet</li>
+            <li>Lorem ipsum dolor amet</li>
+          </ul>
+        </div>
+        <div class="lists-heart">
+          <ul>
+            <li>Lorem ipsum dolor amet</li>
+            <li>Lorem ipsum dolor amet</li>
+            <li>Lorem ipsum dolor amet</li>
+          </ul>
+        </div> {% endcomment %}
+        <!-- ENDS  Lists -->
+             </div>
+      <!-- ENDS entry-content -->
+      <div class="c-1"></div>
+      <div class="c-2"></div>
+      <div class="c-3"></div>
+      <div class="c-4"></div>
+    </div>
+    <!-- ENDS page-content -->
+  </div>
+</div>
+<!-- ENDS MAIN -->
+
+    <div id="footer-bottom">&copy; Copyright 2012 <a href="#">Company Name</a> All Rights Reserved | Website Template By <a target="_blank" href="http://www.luiszuno.com">luiszuno</a></div>
+  </div>
+  <!-- ENDS wrapper -->
+</footer>
+<!-- JavaScript at the bottom for fast page loading -->
+<script src="js/jquery-1.7.1.min.js"></script>
+<!-- scripts concatenated and minified via build script -->
+<script src="js/custom.js"></script>
+<!-- superfish -->
+<script src="js/superfish-1.4.8/js/hoverIntent.js"></script>
+<script src="js/superfish-1.4.8/js/superfish.js"></script>
+<script src="js/superfish-1.4.8/js/supersubs.js"></script>
+<!-- ENDS superfish -->
+<script src="js/jquery.isotope.min.js"></script>
+<script src="js/jquery.nivo.slider.js"></script>
+<script src="js/css3-mediaqueries.js"></script>
+<script src="js/tabs.js"></script>
+<script src="js/poshytip-1.1/src/jquery.poshytip.min.js"></script>
+<!-- end scripts -->
+</body>
+</html>
+{% endblock %}

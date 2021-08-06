@@ -1,0 +1,44 @@
+{%extends 'base.html'%}
+{%block content%}
+{%load static%}
+<!doctype html>
+    <!-- SLIDER -->
+    <div class="slider-wrapper theme-default theme-project theme-home">
+      <div class="ribbon"></div>
+      <div id="slider" class="nivoSlider"> <img src="{%static 'img/dummies/slides/01.jpg' %}" alt=""> <a href="#"><img src="{%static 'img/dummies/slides/02.jpg' %}" alt=""></a> <img src="{%static 'img/dummies/slides/03.jpg'%}" alt=""> </div>
+    </div>
+    <!-- ENDS SLIDER -->
+    <!-- headline -->
+    {%if user.is_authenticated%}
+    <div class="headline"> Welcome {{user.username}} , our premium member , you can Download/Edit/Delete and even Upload your Books on this website </div>
+    {% else %}
+    <div class="headline"> Download All your Favourite Books for FREE!  </div>
+    <div class="headline"> Here are Some Recommended Books by Readers </div>
+    {% endif %}
+    <!-- ENDS headline -->
+    
+    <ul id="filter-container-feature" class="feature">
+    {%for b in bshelf%}
+    <li> <a href="{%url 'single_book' b.pk%}" class="thumb"><img src="{{b.thumbnail.url}}"  alt="{%static 'img/dummies/430x500a.jpg' %}" width="500" height="430">
+        <div class="date"><span class="d"> <br></span><span class="m">_{{b.book_genre|truncatechars:4}}</span></div></a>
+        <div class="caption">{{b.book_name}}</div>
+    </li>
+    {% endfor %}
+    </ul>
+<!-- JavaScript at the bottom for fast page loading -->
+<script src="{%static 'js/jquery-1.7.1.min.js'%}"></script>
+<!-- scripts concatenated and minified via build script -->
+<script src="{%static 'js/custom.js'%}"></script>
+<!-- superfish -->
+<script src="{%static 'js/superfish-1.4.8/js/hoverIntent.js'%}"></script>
+<script src="{%static 'js/superfish-1.4.8/js/superfish.js'%}"></script>
+<script src="{%static 'js/superfish-1.4.8/js/supersubs.js'%}"></script>
+<!-- ENDS superfish -->
+<script src="{%static 'js/jquery.isotope.min.js'%}"></script>
+<script src="{%static 'js/jquery.nivo.slider.js'%}"></script>
+<script src="{%static 'js/css3-mediaqueries.js'%}"></script>
+<script src="{%static 'js/tabs.js'%}"></script>
+<script src="{%static 'js/poshytip-1.1/src/jquery.poshytip.min.js'%}"></script>
+<!-- end scripts -->
+</html>
+{% endblock %}

@@ -1,0 +1,80 @@
+{%extends 'base.html'%}
+{%block content%}
+{%load static%}
+<!doctype html>
+
+
+<html class="no-js" lang="en">
+
+
+<body>
+
+
+<div role="main" id="main">
+  <div class="wrapper">
+    <!-- page-content -->
+    <div class="page-content">
+      <!-- entry-content -->
+      <div class="entry-content cf">
+        <form action="" method="POST">
+        {%csrf_token%}
+
+        
+      
+      <h2 class="heading">Delete " {{shelf.book_name}} "</h2>
+     
+        <h4>Are you Sure you want to Delete this Book??</h4>
+        <input type="submit" value="confirm" class="link-button red">
+        
+    </form>
+      <!-- ENDS entry-content -->
+      <div class="c-1"></div>
+      <div class="c-2"></div>
+      <div class="c-3"></div>
+      <div class="c-4"></div>
+    </div>
+    <!-- ENDS page-content -->
+  </div>
+</div>
+
+<!-- JavaScript at the bottom for fast page loading -->
+<script src="js/jquery-1.7.1.min.js"></script>
+<!-- scripts concatenated and minified via build script -->
+<script src="js/custom.js"></script>
+<!-- superfish -->
+<script src="js/superfish-1.4.8/js/hoverIntent.js"></script>
+<script src="js/superfish-1.4.8/js/superfish.js"></script>
+<script src="js/superfish-1.4.8/js/supersubs.js"></script>
+<!-- ENDS superfish -->
+<script src="js/jquery.isotope.min.js"></script>
+<script src="js/jquery.nivo.slider.js"></script>
+<script src="js/css3-mediaqueries.js"></script>
+<script src="js/tabs.js"></script>
+<script src="js/poshytip-1.1/src/jquery.poshytip.min.js"></script>
+<!-- end scripts -->
+</body>
+</html>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <form action="" method="POST">
+        {%csrf_token%}
+
+        
+        <h1>{{shelf.book_name}}</h1>
+        <h2>Do you want to delete this Book??!!!!</h2>
+        <input type="submit" value="confirm">
+        
+    </form>

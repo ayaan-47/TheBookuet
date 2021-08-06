@@ -1,0 +1,106 @@
+{%extends 'base.html'%}
+{%block content%}
+{%load static%}
+<!doctype html>
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<body>
+
+<!-- MAIN -->
+<div role="main" id="main">
+  <div class="wrapper cf" width=300 height=500>
+    <!-- posts list -->
+    <div id="posts-list" class="cf" >
+    {% if  shelfed%}
+     {%for s in shelfed%}
+      <article>
+       <div class="feature-image"> <a href="{%url 'single_book' s.pk%}" ><img src="{{s.thumbnail_2.url}}" height=300 width=560 alt=""></a>       
+          <a href="{{s.book_pdf.url}}"><div class="entry-date"></div></a>
+        </div>
+        <div class="excerpt"> <h1 class="post-heading" >{{s.book_name}}</h1>
+          <p> {{s.synopsis|truncatechars:50}}</p>
+        </div>
+        <div class="meta"> <span class="user"><a href="#">By {{s.author_name}} </a></span> <span class="comments"></span> <span class="tags"><bold>Genre</bold><a href="#"> : {{s.book_genre}}</a></span> </div>
+        <i class="tape"></i> 
+        </article>
+     {% endfor %}
+
+      {% else %}
+        <h1 class = 'infobox-error'>Sorry There are No books Available for  Right Now</h1>
+    {% endif %}
+        
+     
+      <div class="page-navigation cf">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <!-- <a class="nav-nav" href="?page=1">&laquo; first</a> -->
+                <div class="nav-next"><a href="?page=1">Previous Page</a></div>
+                <div class="nav-next"><a href="?page={{ page_obj.previous_page_number }}">First Page</a></div>
+            {% endif %}
+    
+            <!-- <span class="current">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span> -->
+    
+            {% if page_obj.has_next %}
+            <div class="nav-previous"><a href="?page={{ page_obj.next_page_number }}">Next Page</a></div>
+            <div class="nav-previous"><a href="?page={{ page_obj.paginator.num_pages }}">Last Page</a></div>
+                <!-- <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a> -->
+            {% endif %}
+        </span>
+    </div>
+      
+      <!--ENDS page-navigation -->
+    </div>
+    <!-- ENDS posts list -->
+    <!-- sidebar -->
+    <aside id="sidebar">
+      <ul>
+        <li class="block">
+          <h4 class="heading">Information</h4>
+          <div class="ads cf"> <a href="#"><img src="img/dummies/themeforest.gif" alt=""></a> <a href="#" class="last"><img src="img/dummies/mojo.jpeg" alt=""></a> <a href="#"><img src="img/dummies/themeforest.gif" alt=""></a> <a href="#" class="last"><img src="img/dummies/mojo.jpeg" alt=""></a> </div>
+          There Are ({{counting}})  Books available for {{shelf.sub_category}} this category!!
+        </li>
+        <li class="block">
+          <h4 class="heading">READ THIS !</h4>
+         You can Download your favourite books by clicking on the orange Download button below the Cover image of the book </li>
+        <li class="block">
+          <h4 class="heading">Categories</h4>
+          <ul>
+            <li class="cat-item"><a href="{%url 'synopsis' %}">All<span class="post-counter"></span></a></li>
+            <li class="cat-item"><a href="{%url 'genre_synopsis' 3%}">Romance {{counting}}<span class="post-counter"></span></a></li>
+            <li class="cat-item"><a href="{%url 'genre_synopsis' 4%}">Thriller<span class="post-counter"> </span></a></li>
+            <li class="cat-item"><a href="{%url 'genre_synopsis' 5%}">Crime<span class="post-counter"> </span></a></li>
+            <li class="cat-item"><a href="{%url 'genre_synopsis' 6%}">Comedy<span class="post-counter"> </span></a></li>
+            <li class="cat-item"><a href="{%url 'genre_synopsis' 7%}">Religious<span class="post-counter"> </span></a></li>
+            <li class="cat-item"><a href="{%url 'genre_synopsis' 8%}">Horror<span class="post-counter"> </span></a></li>
+            <li class="cat-item"><a href="{%url 'genre_synopsis' 9%}">Drama<span class="post-counter"> </span></a></li>
+
+        
+          </ul>
+        </li>
+      </ul>
+    </aside>
+    <!-- ENDS sidebar -->
+  </div>
+</div>
+<!-- ENDS MAIN -->
+
+<!-- JavaScript at the bottom for fast page loading -->
+<script src="js/jquery-1.7.1.min.js"></script>
+<!-- scripts concatenated and minified via build script -->
+<script src="js/custom.js"></script>
+<!-- superfish -->
+<script src="js/superfish-1.4.8/js/hoverIntent.js"></script>
+<script src="js/superfish-1.4.8/js/superfish.js"></script>
+<script src="js/superfish-1.4.8/js/supersubs.js"></script>
+<!-- ENDS superfish -->
+<script src="js/jquery.isotope.min.js"></script>
+<script src="js/jquery.nivo.slider.js"></script>
+<script src="js/css3-mediaqueries.js"></script>
+<script src="js/tabs.js"></script>
+<script src="js/poshytip-1.1/src/jquery.poshytip.min.js"></script>
+<!-- end scripts -->
+</body>
+</html>
+{%endblock%}

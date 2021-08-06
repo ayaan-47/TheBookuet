@@ -1,0 +1,66 @@
+{%extends 'base.html'%}
+{%block content%}
+{%load static%}
+<!doctype html>
+
+<body>
+  
+      <div role="main" id="main">
+        <div class="wrapper">
+      <div role="main" id="main">
+        <div class="wrapper">
+          <ul id="filter-buttons">
+            <li ><a href="{%url 'all_books' %}" >All</a></li>
+            <li><a href="{%url 'genre_all_books' "r"%}">Romance</a></li>
+            <li><a href="{%url 'genre_all_books' "t"%}">Thriller</a></li>
+            <li><a href="{%url 'genre_all_books' "cr"%}">Crime</a></li>
+            <li><a href="{%url 'genre_all_books' "c"%}">Comedy</a></li>
+            <li><a href="{%url 'genre_all_books' "d"%}">Drama</a></li>
+            <li><a href="{%url 'genre_all_books' "h"%}">Horror</a></li>
+            <li><a href="{%url 'genre_all_books' "s"%}">Religious</a></li>
+            <li><a href="{%url 'genre' 1%}">Featured</a></li>
+            <li><a href="{%url 'genre' 2%}">Normal</a></li>
+          
+          </ul>
+          {% if questions %}
+          <!-- Filter container -->
+          <ul id="filter-container" class="feature cf">
+                {%for s in questions%}
+                  <li > <a href="{%url 'single_book' s.pk%}" class="thumb"><img src="{{s.thumbnail.url}} " width="500" height="430" alt="">
+                    <div class="date"><span class="d">{{counts}}</span><span class="m">{{counts}}</span></div>
+                    </a>
+                    <div class="caption">{{s.book_name}}</div>
+                  </li>
+                {% endfor %}  
+          </ul>
+          <!-- ENDS Filter container -->
+        </div>
+     
+      {% comment %} PAGINATION ENDS {% endcomment %}
+
+       
+  
+          {% else %}
+          <h1 class = "infobox-error">Sorry there are no Books available for {{questions.book_genre}}  Genre</h1>
+          {% endif %}
+  <!-- JavaScript at the bottom for fast page loading -->
+  <!-- scripts concatenated and minified via build script -->
+  <script src="{%static 'js/jquery-1.7.1.min.js'%}"></script>
+  <script src="{%static 'js/custom.js'%}"></script>
+  <!-- superfis{%static 'h -->
+  <script src="{%static 'js/superfish-1.4.8/js/hoverIntent.js'%}"></script>
+  <script src="{%static 'js/superfish-1.4.8/js/superfish.js'%}"></script>
+  <script src="{%static 'js/superfish-1.4.8/js/supersubs.js'%}"></script>
+  <!-- ENDS sup{%static 'erfish -->
+  <script src="{%static 'js/jquery.isotope.min.js'%}"></script>
+  <script src="{%static 'js/jquery.nivo.slider.js'%}"></script>
+  <script src="{%static 'js/css3-mediaqueries.js'%}"></script>
+  <script src="{%static 'js/tabs.js'%}"></script>
+  <script src="{%static 'js/poshytip-1.1/src/jquery.poshytip.min.js'%}"></script>
+  <!-- end scripts -->
+  
+  
+  
+</body>
+  </html>
+  {% endblock %}

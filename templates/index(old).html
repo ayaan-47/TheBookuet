@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOKUET</title>
+</head>
+<body>
+    <h1>This is a Non-Profitable Open Source Website</h1>
+    <a href="{%url 'create' %}"><h2>Upload A Book</h2></a>
+  
+    <h4>My Website Provides all the Requested Books in the form of Pdfs</h4>
+    {%for s in shelf%}
+        <a href="{%url 'synopsis' s.pk%}"><h1>{{s.book_name}}</h1></a>
+        <img src="{{s.thumbnail.url}}" alt="{{ s.book_name}}">
+        <br>
+   
+        <a href="{{s.book_pdf.url}}">Download</a>
+
+
+    {% endfor %}
+
+</body>
+</html>

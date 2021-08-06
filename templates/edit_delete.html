@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<!-- ENDS HEADER -->
+<!-- MAIN -->
+<div role="main" id="main">
+  <div class="wrapper">
+    <!-- page-content -->
+    <div class="page-content">
+      <!-- entry-content -->
+      <div class="entry-content cf">
+
+        <!-- Infos -->
+        {% comment %} <h4 class="heading">Box Info</h4> {% endcomment %}
+        {% comment %} <p class="infobox-info">Edit</p> {% endcomment %}
+        <p class="infobox-warning"><a href="{%url 'book_edit' shelf.pk%}">Edit</a></p>
+        <p class="infobox-error"><a href="{%url 'book_delete' shelf.pk%}">Delete</a></p>
+        {% comment %} <p class="infobox-success">Success Info</p> {% endcomment %}
+       
+        <!-- ENDS Infos -->
+ 
+    </div>
+    <!-- ENDS page-content -->
+  </div>
+</div>
+<!-- ENDS MAIN -->
+
+<!-- JavaScript at the bottom for fast page loading -->
+<script src="js/jquery-1.7.1.min.js"></script>
+<!-- scripts concatenated and minified via build script -->
+<script src="js/custom.js"></script>
+<!-- superfish -->
+<script src="js/superfish-1.4.8/js/hoverIntent.js"></script>
+<script src="js/superfish-1.4.8/js/superfish.js"></script>
+<script src="js/superfish-1.4.8/js/supersubs.js"></script>
+<!-- ENDS superfish -->
+<script src="js/jquery.isotope.min.js"></script>
+<script src="js/jquery.nivo.slider.js"></script>
+<script src="js/css3-mediaqueries.js"></script>
+<script src="js/tabs.js"></script>
+<script src="js/poshytip-1.1/src/jquery.poshytip.min.js"></script>
+<!-- end scripts -->
+</body>
+</html>
+{% endblock %}

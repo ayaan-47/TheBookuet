@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+      <form id="contactForm" action="{%url 'search_all_books'%}" method = POST>
+        {% csrf_token %}
+        <fieldset>
+          <p>
+            <h1 >Search Your Book by it's Name Only!!</h1>
+            <input name="search"   type="text" class="form-poshytip" title="Search Your Book Name">
+            <button class ='link-button green' type = "submit"> SEARCH
+          </p>
+
+         
+            {% comment %} <span id="error" class="warning">Error Message</span></p> {% endcomment %}
+        </fieldset>
+      </form>
+  
+      {% endblock %}
