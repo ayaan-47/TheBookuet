@@ -25,7 +25,7 @@ SECRET_KEY = 'vt5!m62=k_+bu+o#bb-k0&u^@b&=s=&_#-281p1x7s4)+-=z#h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['thebookuet.herokuapp.com' , '127.0.0.1']
 
 
 # Application definition
