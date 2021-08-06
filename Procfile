@@ -1,1 +1,1 @@
-web:gunicorn BOOKUET.wsgi
+web: gunicorn BOOKUET.wsgi
