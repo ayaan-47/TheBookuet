@@ -127,14 +127,9 @@ class Single_Book_Details(DetailView):
     model = book
     template_name = "single_book.html"
     context_object_name = 'shelf'
+    
 
-class Review_Form(FormView):
-    template_name = 'single_book.html'
-    form_class = ReviewForm
-    success_url = reverse_lazy('homepage')
-    def form_valid(self, form):
-        form.working()
-        return super().form_valid(form) 
+
 
 
 @method_decorator(login_required, name='dispatch') 
