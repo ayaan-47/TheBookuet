@@ -5,7 +5,9 @@
 <html class="no-js" lang="en">
 <!--<![endif]-->
 <body>
-
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Fredericka+the+Great&family=Kite+One&family=Love+Ya+Like+A+Sister&family=Oregano&family=Trade+Winds&family=Trispace:wght@700&display=swap');
+</style> 
 <!-- MAIN -->
 <div role="main" id="main">
   <div class="wrapper cf" width=300 height=500>
@@ -17,8 +19,8 @@
        <div class="feature-image"> <a href="{%url 'single_book' s.pk%}" ><img src="{{s.thumbnail_2.url}}" height=300 width=560 alt=""></a>       
           <a href="{{s.book_pdf.url}}"><div class="entry-date"></div></a>
         </div>
-        <div class="excerpt"> <h1 class="post-heading" >{{s.book_name}}</h1>
-          <p> {{s.synopsis|truncatechars:50}}</p>
+        <div class="excerpt"> <h1 class="post-heading" style="font-family: 'Kite One', sans-serif;" >{{s.book_name}}</h1>
+          <p style="font-family: 'Kite One', sans-serif;"> {{s.synopsis|truncatechars:50}}</p>
         </div>
         <div class="meta"> <span class="user"><a href="#">By {{s.author_name}} </a></span> <span class="comments"></span> <span class="tags"><bold>Genre</bold><a href="#"> : {{s.book_genre}}</a></span> </div>
         <i class="tape"></i> 
@@ -56,17 +58,17 @@
     <!-- sidebar -->
     <aside id="sidebar">
       <ul>
-        <li class="block">
-          <h4 class="heading">Information</h4>
+        <li class="block" style="font-family: 'Kite One', sans-serif;">
+          <h4 class="heading" style ="font-family: 'Bungee Shade', cursive;">Information</h4>
           <div class="ads cf"> <a href="#"><img src="img/dummies/themeforest.gif" alt=""></a> <a href="#" class="last"><img src="img/dummies/mojo.jpeg" alt=""></a> <a href="#"><img src="img/dummies/themeforest.gif" alt=""></a> <a href="#" class="last"><img src="img/dummies/mojo.jpeg" alt=""></a> </div>
          You can click on the Book Thumbnail to read the full synopsis and Reviews 
         </li>
-        <li class="block">
-          <h4 class="heading">READ THIS !</h4>
+        <li class="block" style="font-family: 'Kite One', sans-serif;">
+          <h4 class="heading" style ="font-family: 'Bungee Shade', cursive;">READ THIS !</h4>
          You can Download your favourite books by clicking on the orange Download button below the Cover image of the book </li>
-        <li class="block">
-          <h4 class="heading">Categories</h4>
-          <ul>
+        <li class="block" style="font-family: 'Trispace', sans-serif;">
+          <h4 class="heading" style ="font-family: 'Bungee Shade', cursive;">Categories</h4>
+          <ul >
             <li class="cat-item"><a href="{%url 'synopsis' %}">All<span class="post-counter"></span></a></li>
             <li class="cat-item"><a href="{%url 'genre_synopsis' 1%}">Romance {{counting}}<span class="post-counter"></span></a></li>
             <li class="cat-item"><a href="{%url 'genre_synopsis' 2%}">Thriller<span class="post-counter"> </span></a></li>

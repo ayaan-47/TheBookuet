@@ -9,6 +9,9 @@
 @import url('../js/poshytip-1.1/src/tip-yellow/tip-yellow.css');
 
 @import url('isotope.css');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Fredericka+the+Great&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
 /*
 * Folder v1.0
 *
@@ -47,7 +50,7 @@
   position: relative;
 }
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;  /*for book name*/
   font-size: 16px;
   line-height: 1.5em;
   background: #95c9c3 url(../img/grunge.png) repeat-x center 150px;
@@ -68,7 +71,7 @@ body p {
 #main h4,
 #main h5,
 #main h6 {
-  font-family: mensch;
+  font-family: mensch; /*Side Bar */
   line-height: 1.3em;
 }
 h1 {
@@ -82,6 +85,7 @@ h3 {
 }
 h4 {
   font-size: 24px;
+  
 }
 h5 {
   font-size: 18px;
@@ -122,7 +126,7 @@ nav {
   float: left;
   position: relative;
   left: 50%;
-  font-family: mensch;
+  font-family: 'Love Ya Like A Sister', cursive;
   word-spacing: -0.1em;
   font-size: 20px;
   /* sub navigation -----------------------------------------------------*/
@@ -159,7 +163,7 @@ nav {
 }
 #nav > li ul {
   font-size: 14px;
-  font-family: Tahoma;
+  font-family: Tahoma; /*Under Features Nav bar*/
   text-align: left;
   margin-top: 19px;
   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.1);
@@ -245,7 +249,7 @@ nav {
   width: 60px;
   background: #f3e4c8;
   float: left;
-  font-family: mensch;
+  font-family: mensch; /*For Genre Name or THE PREVIOUS DATE AND TIME*/
   padding-top: 10px;
 }
 .feature li .thumb .date span {
@@ -410,7 +414,7 @@ nav {
   width: 76px;
   height: 66px;
   background: url(../img/date.png)  no-repeat top left;
-  font-family: mensch;
+  font-family: mensch; /*Don't Know*/
   font-size: 20px;
   line-height: 1.1em;
   text-align: center;
@@ -424,7 +428,7 @@ nav {
   color: #585246;
 }
 #posts-list article .excerpt .post-heading {
-  font-family: mensch;
+  font-family: mensch; /*Synopsis // Book Names*/ 
   font-size: 36px;
   line-height: 1.1em;
   color: #585246;

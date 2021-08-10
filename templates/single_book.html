@@ -4,7 +4,9 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <!--<![endif]-->
-
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Fredericka+the+Great&family=Kite+One&family=Love+Ya+Like+A+Sister&family=Oregano&family=Trade+Winds&family=Trispace:wght@700&display=swap');
+</style>
 <body>
 
 <!-- MAIN -->
@@ -16,18 +18,18 @@
         <div class="feature-image"> <a href="#" ><img src="{{shelf.thumbnail_2.url}}" alt=""></a>
           <a href="{{shelf.book_pdf.url}}"><div class="entry-date"></div></a>
         </div>
-        <div class="excerpt"> <a href="single.html" class="post-heading" >{{shelf.book_name}}</a>
-          <p> {{shelf.synopsis}} </p>
+        <div class="excerpt"> <a href="single.html" class="post-heading" style="font-family: 'Kite One', sans-serif;">{{shelf.book_name}}</a>
+          <p style="font-family: 'Kite One', sans-serif;"> {{shelf.synopsis}} </p>
         </div>
         <div class="meta"> <span class="user"><a href="#">By {{shelf.author_name}}, </a></span> <span class="comments">16 comments</span> <span class="tags"><a href="#">red</a>, <a href="#">cyan</a>, <a href="#">white</a>, <a href="#">blue</a></span> </div>
         <i class="tape"></i> </article>
       <!-- comments list -->
       <div id="comments-wrap">
-        <h4 class="heading">Reviews</h4>
+        <h4 class="heading" style ="font-family: 'Bungee Shade', cursive;">Reviews</h4>
         
         <ol class="commentlist">
         {%for s in shelf.reviews.all%}
-          <li class="comment even thread-even depth-1" id="li-comment-1">
+          <li class="comment even thread-even depth-1" id="li-comment-1" style="font-family: 'Kite One', sans-serif;">
             <div id="comment-1" class="comment-body cf"> <img alt="" src="{%static 'img/profile.png'%}" class="avatar avatar-35 photo" height="35" width="35">
               <div class="comment-author vcard">{{s.review_name}}</div>
               {%if user.is_authenticated%}
@@ -86,22 +88,22 @@
           <h4 class="heading">Sponsors</h4>
           <div class="ads cf"> <a href="#"><img src="img/dummies/themeforest.gif" alt=""></a> <a href="#" class="last"><img src="img/dummies/mojo.jpeg" alt=""></a> <a href="#"><img src="img/dummies/themeforest.gif" alt=""></a> <a href="#" class="last"><img src="img/dummies/mojo.jpeg" alt=""></a> </div>
         </li> {% endcomment %}
-        <li class="block">
-          <h4 class="heading">READ ME !</h4>
+        <li class="block" style="font-family: 'Kite One', sans-serif;">
+          <h4 style ="font-family: 'Bungee Shade', cursive;"class="heading">READ ME !</h4>
               Click on the Download button to get your PDF book.</li>
         <li class="block">
-          <h4 class="heading">Categories</h4>
+          <h4 style ="font-family: 'Bungee Shade', cursive;" class="heading" >Categories</h4>
           <ul>
-            <li class="cat-item"><a href="{%url 'synopsis' %}">All<span class="post-counter"></span></a></li>
-            <li class="cat-item"><a href="{%url 'genre_synopsis' 1%}">Romance {{counting}}<span class="post-counter"></span></a></li>
-            <li class="cat-item"><a href="{%url 'genre_synopsis' 2%}">Thriller<span class="post-counter"> </span></a></li>
-            <li class="cat-item"><a href="{%url 'genre_synopsis' 3%}">Crime<span class="post-counter"> </span></a></li>
-            <li class="cat-item"><a href="{%url 'genre_synopsis' 4%}">Comedy<span class="post-counter"> </span></a></li>
-            <li class="cat-item"><a href="{%url 'genre_synopsis' 5%}">Religious<span class="post-counter"> </span></a></li>
-            <li class="cat-item"><a href="{%url 'genre_synopsis' 6%}">Horror<span class="post-counter"> </span></a></li>
-            <li class="cat-item"><a href="{%url 'genre_synopsis' 7%}">Drama<span class="post-counter"> </span></a></li>
-            <li class="cat-item"><a href="{%url 'genre_synopsis' 8%}">Fiction<span class="post-counter"> </span></a></li>
-            <li class="cat-item"><a href="{%url 'genre_synopsis' 9%}">Self-Help<span class="post-counter"> </span></a></li>
+            <li style = "font-family: 'Trispace', sans-serif;" class="cat-item"><a href="{%url 'synopsis' %}">All<span class="post-counter"></span></a></li>
+            <li style = "font-family: 'Trispace', sans-serif;" class="cat-item"><a href="{%url 'genre_synopsis' 1%}">Romance {{counting}}<span class="post-counter"></span></a></li>
+            <li style = "font-family: 'Trispace', sans-serif;" class="cat-item"><a href="{%url 'genre_synopsis' 2%}">Thriller<span class="post-counter"> </span></a></li>
+            <li style = "font-family: 'Trispace', sans-serif;" class="cat-item"><a href="{%url 'genre_synopsis' 3%}">Crime<span class="post-counter"> </span></a></li>
+            <li style = "font-family: 'Trispace', sans-serif;" class="cat-item"><a href="{%url 'genre_synopsis' 4%}">Comedy<span class="post-counter"> </span></a></li>
+            <li style = "font-family: 'Trispace', sans-serif;" class="cat-item"><a href="{%url 'genre_synopsis' 5%}">Religious<span class="post-counter"> </span></a></li>
+            <li style = "font-family: 'Trispace', sans-serif;" class="cat-item"><a href="{%url 'genre_synopsis' 6%}">Horror<span class="post-counter"> </span></a></li>
+            <li style = "font-family: 'Trispace', sans-serif;" class="cat-item"><a href="{%url 'genre_synopsis' 7%}">Drama<span class="post-counter"> </span></a></li>
+            <li style = "font-family: 'Trispace', sans-serif;" class="cat-item"><a href="{%url 'genre_synopsis' 8%}">Fiction<span class="post-counter"> </span></a></li>
+            <li style = "font-family: 'Trispace', sans-serif;" class="cat-item"><a href="{%url 'genre_synopsis' 9%}">Self-Help<span class="post-counter"> </span></a></li>
 
           </ul> 
         </li>

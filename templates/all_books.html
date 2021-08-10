@@ -2,7 +2,13 @@
 {%block content%}
 {%load static%}
 <!doctype html>
-
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Fredericka+the+Great&family=Love+Ya+Like+A+Sister&family=Oregano&family=Trade+Winds&family=Trispace:wght@300&display=swap');
+  li{
+    font-family: 'Trispace', sans-serif;          
+    
+  }
+  </style>
 <body>
   
       <div role="main" id="main">
@@ -10,7 +16,7 @@
       <div role="main" id="main">
         <div class="wrapper">
           <ul id="filter-buttons">
-            <li ><a href="{%url 'all_books' %}" >All</a></li>
+            <li><a href="{%url 'all_books' %}" >All</a></li>
             <li><a href="{%url 'genre' 1%}">Romance</a></li>
             <li><a href="{%url 'genre' 2%}">Thriller</a></li>
             <li><a href="{%url 'genre' 3%}">Crime</a></li>
