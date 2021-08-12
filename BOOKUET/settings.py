@@ -87,9 +87,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'mybookstore',
-        'USER': 'ayaan',
-        'PASSWORD': '00470047',
-        'HOST': 'database-1.c2wcf9rpww1o.ap-south-1.rds.amazonaws.com',
+        'USER': 'NAME',
+        'PASSWORD': '********',
+        'HOST': 'INSERT RDS LINK',
         'PORT' : '5432',
         
        
@@ -119,8 +119,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 #S3 BUCKETS CONFIG
 
-AWS_ACCESS_KEY_ID = 'AKIA3NHMU6WISYACQ32M'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = 'INSERT ID '
+AWS_SECRET_ACCESS_KEY = 'INSERT PASSWORD'
 
 AWS_STORAGE_BUCKET_NAME = 'thebookuet-bucket'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
