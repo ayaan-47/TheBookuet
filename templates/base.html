@@ -27,8 +27,11 @@
   <nav class="cf">
     <div class="wrapper cf">
       <ul id="nav" class="sf-menu">
-      
+      {%if request.path == '/'%}
         <li class="current-menu-item"><a href="{%url 'homepage'%}">HOME<i><b></b></i></a></li>
+      {%else%}
+        <li><a href="{%url 'homepage'%}">HOME<i><b></b></i></a></li>
+      {%endif%}  
         <li><a href="#">FEATURES<i><b></b></i></a>
           <ul>
           {% if user.is_authenticated %}
@@ -42,11 +45,33 @@
           {% endif %}
           </ul>
         </li>
+        
+        
+      {%if request.path == '/synopsis'%}
+        <li class="current-menu-item"><a href="{%url 'synopsis' %}">SYNOPSIS<i><b></b></i></a></li>
+      {%else %}
         <li><a href="{%url 'synopsis' %}">SYNOPSIS<i><b></b></i></a></li>
+      {%endif%}
+      {%if request.path == '/all_books'%}
+        <li class="current-menu-item"><a href="{%url 'all_books' %}">BOOKS<i><b></b></i></a></li>
+      {%else %}
         <li><a href="{%url 'all_books' %}">BOOKS<i><b></b></i></a></li>
-        <li><a href="{%url 'search_page'%}">SEARCH<i><b></b></i></a></li>
-        <li><a href="{%url 'categories_list' %}">CATEGORIES<i><b></b></i></a></li>
+      {%endif%}
+      {%if request.path == '/search_page'%}  
+        <li class="current-menu-item"><a href="{%url 'search_page'%}">SEARCH<i><b></b></i></a></li>
+      {%else %}
+        <li><a href="{%url 'search_page' %}">SEARCH<i><b></b></i></a></li>
+      {%endif%}  
+      {%if request.path == '/categories_list'%}  
+        <li class="current-menu-item"><a href="{%url 'categories_list' %}">CATEGORIES<i><b></b></i></a></li>
+      {%else %}
+        <li ><a href="{%url 'categories_list' %}">CATEGORIES<i><b></b></i></a></li>
+      {%endif%}  
+      {%if request.path == '/contact'%} 
+        <li class="current-menu-item"><a href={%url 'contact'%}>Request for a Book<i><b></b></i></a></li>
+      {%else %}
         <li><a href={%url 'contact'%}>Request for a Book<i><b></b></i></a></li>
+      {%endif%}
       </ul>
       <div id="combo-holder"></div>
     </div>
@@ -60,7 +85,7 @@
   <div class="wrapper">
     <!-- SLIDER -->
     {%block content%}
-    {% endblock %}
+    {% endblock %} 
   </div>
 </div>
     

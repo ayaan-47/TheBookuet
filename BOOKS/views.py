@@ -54,7 +54,8 @@ def Book_List(request, pk):
 
 
     
-    
+
+
 
 
 # Older method containing Strings as passed 
@@ -64,6 +65,8 @@ def Book_List(request, pk):
 #    return render (request,"synopsis.html",{'cat':cat, 'shelf':shelf ,'counting':counting })
 # 4. Book_Details = it also filters the objects but with genre id instead of string
 def Book_Details(request, pk):
+    
+      
         gen = Genres.objects.annotate(total_books=Count('books')).filter(id = pk)
         shelfed = book.objects.filter(book_genre = pk)
         return render(request,"synopsis.html",{'shelfed':shelfed},{'gen':gen})

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'BOOKS',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -76,24 +77,25 @@ WSGI_APPLICATION = 'BOOKUET.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-# }
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'da287m14ikgek1',
-#         'USER': 'hyivgdtvrthqsq',
-#         'PASSWORD': '3e87e5a1c569c56ac01dbf7a304efda7934da6e36d00b812f48c70465d9cb872',
-#         'HOST': 'ec2-34-197-105-186.compute-1.amazonaws.com',
-#         'PORT' : 5432,
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'mybookstore',
+        'USER': 'ayaan',
+        'PASSWORD': '00470047',
+        'HOST': 'database-1.c2wcf9rpww1o.ap-south-1.rds.amazonaws.com',
+        'PORT' : '5432',
         
        
-#     }
+    }
 }
+
 # DATABASES = {
 #     'default':dj_database_url.config()
 # }
@@ -115,6 +117,27 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#S3 BUCKETS CONFIG
+
+AWS_ACCESS_KEY_ID = 'AKIA3NHMU6WISYACQ32M'
+AWS_SECRET_ACCESS_KEY = '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'
+
+AWS_STORAGE_BUCKET_NAME = 'thebookuet-bucket'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_CUSTOM_DOMAIN = 'thebookuet-bucket.s3.amazonaws.com'
+# AWS_S3_OBJECT_PARAMETERS = {'CacheControl': 'max-age=86400'}
+
+AWS_LOCATION = 'static'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN,AWS_LOCATION)
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+# AWS_DEFAULT_ACL = None
+# AWS_S3_FILE_OVERWRITE = False
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
@@ -134,10 +157,12 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), ) 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), ) 
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 MEDIA_URL = '/media/' 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # django_heroku.settings(locals())
